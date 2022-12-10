@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+/*THEME JOUR*/
+
+/*Mise en place du style de base*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --bg-color: #FFFFFF;
+    --text-color: #000000;
+    --main-color: #006d0d;
+}
+
+/*Fond en fégradé*/
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 1000px;
+    background-image: linear-gradient(90deg, #fdfcfb, #e2d1c3);
+}
+
+/* Style du menu*/
+.menu {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 32px 3%;
+    transition: all .50s ease;
+    background-color: rgb(255, 255, 255);
+
+}
+
+/*Style du logo et de son texte sur le menu*/
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.logo img {
+    margin-right: 5px;
+}
+.logo:hover{
+    color:var(--main-color) ;
+}   
+
+
+
+/*Style du menu catégories*/
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0 50px;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar li a {
+    position: relative;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-color);
+}
+
+/*Animation quand on va sur une catégorie*/
+.navbar li a::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.navbar li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/*Pas d'animation pour la catégorie active*/
+.navbar li a.active::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+/*  style du bouton du menu hamburger*/
+.menu .menuhamburger{
+    display: none;
+    width: 35px;
+}
+
+/*Adaptation pour les plus petit ecran rendre l'affichage "responsive"*/
+@media screen and (max-width: 1211px){
+        .menu .menuhamburger{
+            display: block;
+            cursor: pointer;
+        }
+        
+        .menu{
+            overflow: hidden;
+        }
+        .navbar{
+            margin: 0;
+            position: absolute; 
+            height: 450px;
+            top: 70px;
+            left: 0 ;
+            right: 0;
+            background-color: rgb(255, 255, 255);
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+       }
+       .navbar.active{
+        height: 550px;
+        opacity: 1;
+       }
+       .menu.active{
+        overflow: visible;
+       }
+}
