@@ -30,7 +30,7 @@ body {
 }
 
 /* Style du menu*/
-header{
+header {
     margin-bottom: 101px;
 }
 
@@ -97,7 +97,7 @@ header{
     position: absolute;
     bottom: -4px;
     width: 100%;
-    height: 2px;
+    height: 1.5px;
     background-color: black;
     transform: scaleX(0);
     transition: transform 0.5s ease-in-out;
@@ -172,7 +172,7 @@ footer .botmenu .borderfoot {
     }
 
     .menu {
-        overflow: hidden;
+        overflow: hidden; 
     }
 
     .navbar {
@@ -188,11 +188,15 @@ footer .botmenu .borderfoot {
         justify-content: center;
         flex-direction: column;
         opacity: 0;
+        
     }
 
     .navbar.active {
+        
         height: 550px;
         opacity: 1;
+        
+        
     }
 
     .menu.active {
@@ -220,13 +224,16 @@ footer .botmenu .borderfoot {
         flex-wrap: wrap;
         margin-top: 5px;
     }
+    footer p{
+        text-align: center;
+    }
 
 }
 
 /*Spécial index*/
 h1.title {
- display: flex;
- justify-content: center;
- align-items: center;
- margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
 }
